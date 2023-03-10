@@ -4,7 +4,6 @@
   }
 
   .accordion__item {
-    padding-bottom: 1em;
     border-bottom: 0.1em solid #808691;
     transition: opacity 0.3s ease-out;
   }
@@ -19,7 +18,7 @@
   }
 
   .accordion__title {
-    padding-right: 0.5em;
+    padding: 1em 0.5em 1em 0;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -34,31 +33,17 @@
     color:#3471eb !important;
   }
 
-  .accordion__item:active .accordion__title .accordion__icon {
-    opacity: 1;
-    transform: rotate(0);
-  }
-
-  .accordion__item:active .accordion__title .accordion__icon path {
-    stroke:#3471eb !important;
-  }
-
   .accordion__item:active {
     opacity: 0.7;
   }
 
-  .accordion__input {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 0;
-    height: 0;
-    font-size: 0;
-    margin-left: 0;
-  }
-
   .accordion__input:checked ~ .accordion__content {
     max-height: 100%;
-    transition: all 1s;
+  }
+
+  .accordion__input:checked ~ .accordion__content .accordion__img {
+    max-height: 100%;
+    transform: scale(1);
   }
 
   .accordion__input:checked ~ .accordion__title {
@@ -67,7 +52,7 @@
 
   .accordion__content {
     max-height: 0;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.5s ease-out;
     overflow: hidden;
   }
 
@@ -76,13 +61,15 @@
   }
 
   .accordion__img {
-    padding-top: 1em;
+    padding: 1em 0;
     max-width: 30em;
     display: block;
     margin: 0 auto;
-    width: 100%;
+    width: 50%;
     height: auto;
-    transition: opacity 0.3s ease-out;
+    max-height: 0;
+    transform: scale(0.5);
+    transition: max-height 0.5s ease-out, transform 0.3s ease-out;
   }
 }
 
@@ -122,6 +109,15 @@
   .accordion:hover .accordion__input:checked ~ .accordion__title .accordion__icon {
     opacity: 1;
     transform: rotate(0);
+  }
+
+  .accordion__item:active .accordion__title .accordion__icon {
+    opacity: 1;
+    transform: rotate(0);
+  }
+
+  .accordion__item:active .accordion__title .accordion__icon path {
+    stroke:#3471eb !important;
   }
 
   .accordion__item {
