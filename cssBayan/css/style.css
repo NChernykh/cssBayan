@@ -1,54 +1,94 @@
-.accordion {
-  padding: 30px 15px;
+@media (min-width: 320px) {
+  .accordion {
+    padding: 30px 15px;
+  }
+
+  .accordion__item {
+    padding-bottom: 1em;
+    border-bottom: 0.1em solid #808691;
+    transition: opacity 0.3s ease-out;
+  }
+
+  .accordion__title {
+    display: block;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.5em;
+    line-height: 140%;
+    color: #3471eb;
+    transition: color 0.3s ease-out, opacity 0.3s ease-out;
+  }
+
+  .accordion__item:active .accordion__title {
+    color:#3471eb !important;
+  }
+
+  .accordion__item:active {
+    opacity: 0.7;
+  }
+
+  .accordion__input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    margin-left: 0;
+  }
+
+  .accordion__input:checked ~ .accordion__content {
+    max-height: 100%;
+    transition: all 1s;
+  }
+
+  .accordion__input:checked ~ .accordion__title {
+    color: #000000;
+  }
+
+  .accordion__content {
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+  }
+
+  .accordion__img {
+    padding-top: 1em;
+    max-width: 30em;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease-out;
+  }
 }
 
-.accordion__item {
-  border-bottom: 0.1em solid #808691;
-}
-
-.accordion:hover .accordion__title {
-  color: #000000;
-}
-
-.accordion__title {
-  padding: 1em 0;
-  display: block;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 1.5em;
-  line-height: 140%;
-  color: #3471eb;
-  transition: color 0.3s ease-out;
-}
-
-.accordion__input {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 0;
-  height: 0;
-  font-size: 0;
-  margin-left: 0;
-}
-
-.accordion__input:checked + .accordion__content {
-  display: block;
+@media (min-width: 768px) {
+  .accordion {
+    margin: 0 auto;
+    width: 70%;
+  }
 }
 
 @media (min-width: 1024px) {
-  .accordion__label {
+  .accordion {
+    width: 60%;
+  }
+
+  .accordion:hover .accordion__title {
+    color: #000000;
+  }
+
+  .accordion__item:hover .accordion__content {
+    max-height: 100%;
+  }
+
+  .accordion__item {
     cursor: pointer;
   }
 }
 
-.accordion__content {
-  padding: 20px;
-  display: none;
-}
-
-.accordion__img {
-  max-width: 30em;
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  height: auto;
+@media (min-width: 1440px) {
+  .accordion {
+    width: 50%;
+  }
 }
