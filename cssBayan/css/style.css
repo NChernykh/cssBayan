@@ -1,0 +1,17 @@
+.accordion {
+  padding: 30px 15px;
+}
+
+.accordion__title {
+  font-size: 1.5em;
+  line-height: 140%;
+  color: #000000;
+}
+
+.accordion__img {
+  max-width: 30em;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+}
